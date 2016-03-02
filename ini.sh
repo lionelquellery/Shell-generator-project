@@ -14,7 +14,8 @@ mkdir $name && cd $name
 
 #js folder
 
-mkdir js && cd js && mkdir app && mkdir dist && mkdir vendor
+mkdir js && cd js && mkdir app && mkdir dist && mkdir vendor &&  cd vendor && CURL -o vendor.js https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js && cd ..
+
 
 cd app && echo '$(document).ready(function() {
 
@@ -33,22 +34,24 @@ mkdir fonts && mkdir assets
 
 
 
+
+
 #script start gulp 
 
 
 echo '<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>my project</title>
-	<link rel="stylesheet" href="stylesheets/app.css">
+  <meta charset="UTF-8">
+  <title>my project</title>
+  <link rel="stylesheet" href="stylesheets/app.css">
 </head>
 <body>
 
-	<h1>this file was generated with shell</h1>
+  <h1>this file was generated with shell</h1>
 
-	<script src="js/dist/vendor.js"></script>
-	<script src="js/dist/app.js"></script>
+  <script src="js/dist/vendor.js"></script>
+  <script src="js/dist/app.js"></script>
 </body>
 </html>' > index.html
 
@@ -56,11 +59,11 @@ echo '<!DOCTYPE html>
 
 #creation of gulp file
 
-echo "var gulp 			= require('gulp');
-var concat 		= require('gulp-concat');
-var sass  		= require('gulp-sass');
-var watch  		= require('gulp-watch');
-var plumber 	= require('gulp-plumber');
+echo "var gulp      = require('gulp');
+var concat    = require('gulp-concat');
+var sass      = require('gulp-sass');
+var watch     = require('gulp-watch');
+var plumber   = require('gulp-plumber');
 var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
 
@@ -151,35 +154,35 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 
