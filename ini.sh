@@ -17,9 +17,7 @@ mkdir $name && cd $name
 mkdir js && cd js && mkdir app && mkdir dist && mkdir vendor
 
 cd app && echo '$(document).ready(function() {
-
 console.log(run your javascript);
-
 });' > app.js
 
 cd .. && cd .. 
@@ -39,16 +37,14 @@ mkdir fonts && mkdir assets
 echo '<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>my project</title>
-	<link rel="stylesheet" href="stylesheets/app.css">
+  <meta charset="UTF-8">
+  <title>my project</title>
+  <link rel="stylesheet" href="stylesheets/app.css">
 </head>
 <body>
-
-	<h1>this file was generated with shell</h1>
-
-	<script src="js/dist/vendor.js"></script>
-	<script src="js/dist/app.js"></script>
+  <h1>this file was generated with shell</h1>
+  <script src="js/dist/vendor.js"></script>
+  <script src="js/dist/app.js"></script>
 </body>
 </html>' > index.html
 
@@ -56,34 +52,23 @@ echo '<!DOCTYPE html>
 
 #creation of gulp file
 
-echo "var gulp 			= require('gulp');
-var concat 		= require('gulp-concat');
-var sass  		= require('gulp-sass');
-var watch  		= require('gulp-watch');
-var plumber 	= require('gulp-plumber');
+echo "var gulp      = require('gulp');
+var concat    = require('gulp-concat');
+var sass      = require('gulp-sass');
+var watch     = require('gulp-watch');
+var plumber   = require('gulp-plumber');
 var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
-
-
-
-
 // Default build 
 gulp.task('build', ['sass','js_app', 'js_libs','browser-sync']);
-
 // Watch changments
 gulp.task('default',['browser-sync'], function() {
-
   gulp.watch( 'js/app/*.js', ['js_app']).on('change', reload);
-
   gulp.watch( 'sass/**/*.scss', ['sass']).on('change', reload);
-
   gulp.watch( 'js/vendor/*.js', ['js_libs']).on('change', reload);
-
 });
-
 // App
 gulp.task('js_app', function() {
-
   return gulp.src('js/app/*.js')
         .pipe(plumber({
           errorHandler: function (error) {
@@ -92,9 +77,7 @@ gulp.task('js_app', function() {
         }}))
         .pipe(concat('app.js'))
         .pipe(gulp.dest('js/dist/'))
-
 });
-
 // Sass
 gulp.task('sass', function()
 {
@@ -109,10 +92,8 @@ gulp.task('sass', function()
         }))
         .pipe(gulp.dest( 'stylesheets/' ))
 });
-
 // Vendors
 gulp.task('js_libs', function() {
-
   return gulp.src('js/vendor/*.js')
         .pipe(plumber({
           errorHandler: function (error) {
@@ -121,9 +102,7 @@ gulp.task('js_libs', function() {
         }}))
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest('js/dist/'))
-
 });
-
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
@@ -137,7 +116,6 @@ mkdir stylesheets &&  mkdir sass && cd sass && echo "/* http://meyerweb.com/eric
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -151,38 +129,36 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
-
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
@@ -194,11 +170,8 @@ html {
 
 echo "// Reset import 
 @import '_reset.scss';
-
 // Views import
 @import 'views/_main.scss';
-
-
 " > app.scss
 
 mkdir views && cd views && touch _main.scss
@@ -233,16 +206,3 @@ alias glg="git log"
 
 # gulp start task with browsersnyc
 gulp build && gulp
-
-
-
-
-
-
-
-
-
-
-
-
-
