@@ -19,7 +19,9 @@ The ini.sh will simply create from scratch a new front-starter. See the file for
 
 #### ini-starter.sh
 The ini-starter.sh is based on this [front-starter](https://github.com/lmarti17/front-end-starter).
+
 Basically, shell will clone this repo and build the project. So you need network.
+
 **REQUIRE:** A 'Sites/' directory in your User directory !
 
 ## Installation
