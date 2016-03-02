@@ -9,7 +9,8 @@ echo -e "Lucas install Shell: Nom du Projet"
 read name
 echo "project Name -> $name"
 
-cd ;Sites/
+cd ;
+cd Sites/
 
 git clone https://github.com/lmarti17/front-end-starter.git $name
 
