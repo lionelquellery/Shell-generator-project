@@ -20,6 +20,4 @@ rm -rf .git
 git init
 npm update
 npm install
-bower install
-bower update
 gulp
